@@ -1,14 +1,21 @@
+import Link from 'next/link'
 import React from 'react'
 
 type SidebarItemProps = {
-  children: React.ReactNode
+  icon: React.ReactNode
+  link: string
+  text: string
   className?: string
 }
 
-export function SidebarItem({ children, className }: SidebarItemProps) {
+export function SidebarItem({ icon, link, text, className }: SidebarItemProps) {
   return (
-    <div className={`${className} px-3 py-2 cursor-pointer hover:bg-[var(--secondary-main-01)]`}>
-      {children}
-    </div>
+    <Link
+      href={link}
+      className={`${className} px-3 py-2 cursor-pointer hover:bg-[var(--secondary-main-01)]`}
+    >
+      {icon}
+      {text}
+    </Link>
   )
 }

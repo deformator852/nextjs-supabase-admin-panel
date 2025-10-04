@@ -29,8 +29,10 @@ function ProtectedAdmin({ children }: { children: React.ReactNode }) {
 
   return (
     <div id='root'>
-      <Sidebar />
-      {children}
+      <div className='flex justify-between w-full'>
+        <Sidebar />
+        <main className='mt-3 mr-3'>{children}</main>
+      </div>
     </div>
   )
 }

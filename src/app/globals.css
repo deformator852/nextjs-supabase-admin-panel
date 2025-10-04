@@ -6,6 +6,7 @@
     --main: #ffffff;
     --secondary-main: rgb(22, 119, 255);
     --secondary-main-01: rgb(22, 119, 255, 0.1);
+    --secondary-main-05: rgb(22, 119, 255, 0.5);
     --color-light-gray: rgb(240, 240, 240);
 }
 
