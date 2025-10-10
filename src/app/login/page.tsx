@@ -18,7 +18,6 @@ export default function Login() {
     if (error) {
       setError(error.message)
     } else {
-      alert('login success')
       router.push('/admin/dashboard')
     }
   }
@@ -28,22 +27,38 @@ export default function Login() {
         <form onSubmit={handleLogin} className='grid grid-cols-1 grid-flow-row gap-3'>
           {error && <p className='text-red-500'>{error}</p>}
           <TextField
+            color='secondary'
             type='email'
             label='email'
             variant='outlined'
             placeholder='Enter your email'
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            sx={{
+              '& .MuiOutlinedInput-root' : {
+                '&:hover fieldset':{
+                  borderColor:'var(--secondary-main)'
+                }
+              }
+            }}
           />
           <TextField
+          color='secondary'
             type='password'
             label='password'
             variant='outlined'
             placeholder='Enter your password'
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            sx={{
+              '& .MuiOutlinedInput-root' : {
+                '&:hover fieldset':{
+                  borderColor:'var(--secondary-main)'
+                }
+              }
+            }}
           />
-          <Button type='submit' variant='contained'>
+          <Button type='submit' color="secondary" variant='contained'>
             log in
           </Button>
         </form>
